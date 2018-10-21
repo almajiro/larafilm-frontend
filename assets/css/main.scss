@@ -1,0 +1,17 @@
+@import './base.scss';
+@import './header.scss';
+@import './footer.scss';
+@import './commons.scss';
+@import './cards.scss';
+@import './fonts.scss';
+
+body {
+  font-family: 'Abel';
+  background-attachment:fixed;
+  background-color: $color-primary-0;
+}
+
+main {
+  margin: 0px;
+}
+

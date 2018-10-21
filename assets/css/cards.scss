@@ -1,0 +1,239 @@
+  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
+
+  .cellphone-container {
+    width: 350px;
+    height: 570px;
+    background-color: $rgba-secondary-2-2;
+    margin: 10px;
+    /*
+    box-shadow: 5px 5px 115px -14px black;
+    */
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+  }
+
+  .cellphone-container:hover {
+    transform: scale(1.04, 1.04);
+    transition-duration: 0.5s;
+  }
+
+  .movie-img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    z-index: 111 !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $rgba-secondary-2-2), color-stop(0.35, $rgba-secondary-2-2), color-stop(0.5, $color-primary-1), color-stop(0.65, $rgba-secondary-2-2), color-stop(0.85, rgba(0, 0, 0, 0.6)), color-stop(1, transparent));
+    position: relative;
+  }
+
+  .movie {
+    /*
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #1e1b26 55%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #1e1b26 55%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #1e1b26 55%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1e1b26',GradientType=0 );
+    */
+    position: absolute;
+    background-size: cover;
+    z-index: 1 !important;
+    width: 350px;
+    height: 570px;
+    display: block;
+    border-radius: 4px;
+  }
+
+  .text-movie-cont {
+    padding: 0px 12px;
+    text-align: justify;
+  }
+
+  .action-btn {
+    text-align: right;
+  }
+  .action-btn i {
+    color: #fe4141;
+    font-size: 28px;
+    text-align: right;
+  }
+
+  .watch-btn {
+    display: block;
+    border: 1px solid #fe4141;
+    border-radius: 5px;
+    padding: 4px;
+    width: 140px;
+  }
+  .watch-btn h3 i {
+    font-size: 14px;
+    margin-right: 2px;
+    position: relative;
+    float: left;
+    line-height: 1;
+  }
+/*
+  .action-row {
+    margin-top: 24px;
+  }
+*/
+  .summary-row {
+    margin-top: 12px;
+  }
+
+  /* TYPOGRAPHY STARTS */
+  /* Fonts */
+  h1, h2, h3, h4, h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #e7e7e7;
+    margin: 0px;
+  }
+
+  h1 {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fe4141;
+  }
+
+  h5 {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .movie-gen, .movie-likes {
+    margin: 0px;
+    padding: 0px;
+  }
+  .movie-gen li, .movie-likes li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    color: #818181;
+    width: auto;
+    display: block;
+    float: left;
+    margin-right: 6px;
+    font-weight: 600;
+  }
+
+  .movie-likes {
+    float: right;
+  }
+  .movie-likes li {
+    color: #fe4141;
+  }
+  .movie-likes li:last-child {
+    margin-right: 0px;
+  }
+  .movie-likes li i {
+    font-size: 14px;
+    margin-right: 4px;
+    position: relative;
+    float: left;
+    line-height: 1;
+  }
+
+  .movie-details {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #b4b4b4;
+  }
+
+  .movie-description {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #9b9b9b;
+    text-align: justify;
+  }
+
+  .movie-actors {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #e7e7e7;
+    font-style: italic;
+  }
+
+  /* TYPOGRAPHY ENDS */
+  /** GRID STARTS **/
+  .thegrid {
+    margin: 0 auto;
+  }
+
+  .elements-distance, .movie-details, .movie-description, .movie-actors {
+    margin: 0px;
+  }
+
+  .mr-grid {
+    width: 100%;
+  }
+
+  .mr-grid:before, .mr-grid:after {
+    content: "";
+    display: table;
+  }
+
+  .mr-grid:after {
+    clear: both;
+  }
+
+  .mr-grid {
+    *zoom: 1;
+  }
+
+  .col1, .col2, .col3, .col3rest, .col4, .col4rest, .col5, .col5rest, .col6, .col6rest {
+    margin: 0% 0.5% 0.5% 0.5%;
+    padding: 1%;
+    float: left;
+    display: block;
+  }
+
+  /* Columns match, minus margin sum. E.G. margin-left+margin-right=1%, col2=50%-1% - added padding:1%*/
+  .col1 {
+    width: 98%;
+  }
+
+  .col2 {
+    width: 47%;
+  }
+
+  .col3 {
+    width: 30.3333333333%;
+  }
+
+  .col4 {
+    width: 22%;
+  }
+
+  .col5 {
+    width: 17%;
+  }
+
+  .col6 {
+    width: 13.6666666667%;
+  }
+
+  /* Columns match with their individual number. E.G. col3+col3rest=full width row */
+  .col3rest {
+    width: 63.6666666667%;
+  }
+
+  .col4rest {
+    width: 72%;
+  }
+
+  .col5rest {
+    width: 77%;
+  }
+
+  .col6rest {
+    width: 80.3333333333%;
+  }
+
