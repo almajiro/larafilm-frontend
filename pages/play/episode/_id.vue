@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '~/plugins/axios'
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
 
   export default {
@@ -26,13 +26,13 @@
       }
     },
     async asyncData(context) {
-      let response = await axios.get('http://larafilm.spectre.local/api/episodes/' + context.params.id)
+      let response = await axios.get('/episodes/' + context.params.id)
       let episode = response.data
 
-      response = await axios.get('http://larafilm.spectre.local/api/seasons/' + episode.season_id)
+      response = await axios.get('/seasons/' + episode.season_id)
       let season = response.data
 
-      response = await axios.get('http://larafilm.spectre.local/api/tvs/' + season.tv_id)
+      response = await axios.get('/tvs/' + season.tv_id)
       let tv = response.data
 
       let videos = [];

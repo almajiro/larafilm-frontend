@@ -58,17 +58,13 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '~/plugins/axios'
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
-  import SeriesCard from '~/components/series-card'
-  import Seasons from '~/components/seasons'
 
   export default {
     components: {
       swiper,
       swiperSlide,
-      SeriesCard,
-      Seasons
     },
     data() {
       return {
@@ -88,16 +84,16 @@
       this.getTv()
     },
     async asyncData(context) {
-      let response = await axios.get('http://larafilm.spectre.local/api/tvs/' + context.params.id)
+      let response = await axios.get('/tvs/' + context.params.id)
       let tv = response.data
 
-      response = await axios.get('http://larafilm.spectre.local/api/tvs/')
+      response = await axios.get('/tvs/')
       let tvs = response.data
 
       let seasons = []
 
       for (let season of tv.seasons) {
-        let episodes = await axios.get('http://larafilm.spectre.local/api/seasons/' + season.id + '/episodes')
+        let episodes = await axios.get('/seasons/' + season.id + '/episodes')
         seasons.push(episodes.data)
       }
 
@@ -126,11 +122,11 @@
         }
       },
       async getTv() {
-        let response = await axios.get('http://larafilm.spectre.local/api/tvs/' + this.$route.params.id)
+        let response = await axios.get('/tvs/' + this.$route.params.id)
         this.tv = response.data
 
         for (let season of this.tv.seasons) {
-          let episodes = await axios.get('http://larafilm.spectre.local/api/seasons/' + season.id + '/episodes')
+          let episodes = await axios.get('/seasons/' + season.id + '/episodes')
           this.seasonEpisodes.push(episodes.data)
         }
       },

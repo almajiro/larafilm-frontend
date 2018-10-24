@@ -15,20 +15,11 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
 
-        <b-nav-form>
-          <b-input-group>
-          <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
-            <b-input-group-append>
-              <b-btn size="sm" text="Button" class="search"><i class="fa fa-search"></i></b-btn>
-            </b-input-group-append>
-          </b-input-group>
-        </b-nav-form>
-
         <b-nav-item-dropdown right>
           <!-- Using button-content slot -->
           <template slot="button-content">
-            <img src="http://larafilm.local/storage/profiles/1.jpg" class="profile">
-            <em>Kuroki Almajiro</em>
+            <!-- <img src="http://larafilm.local/storage/profiles/1.jpg" class="profile"> -->
+            Kuroki Almajiro
           </template>
           <b-dropdown-item href="#">Profile</b-dropdown-item>
           <b-dropdown-item href="#">Signout</b-dropdown-item>

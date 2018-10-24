@@ -1,81 +1,19 @@
 <template>
-  <div v-if="tv">
-    <div class="header-item header-series">
-      <div class="bg"
-           v-bind:style="{background: '-webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.8) 45%, rgba(255, 255, 255, 0)), url('+background(tv.images)+') no-repeat center center',
-                'background-size': 'cover'}">
-      </div>
-      <div class="info">
-        <div class="logo" v-if="findLogo(tv.images) !== ''">
-          <img v-bind:src="findLogo(tv.images)">
-        </div>
-        <div class="text-logo" v-else>
-          {{ tv.name }}
-        </div>
-        <div class="seasons">
-          <p>Season {{ tv.seasons[tv.seasons.length - 1].season }}</p>
-        </div>
-        <p>{{ tv.plot }}</p>
-        <p class="mpaa-radius">{{ tv.mpaa }}</p><p class="year-radius">{{ tv.year }}</p><p class="status-radius">{{ tv.status }}</p>
-        <p>{{ prettyGenre(tv.genres) }}</p>
-      </div>
-    </div>
+<div>
     <b-container fluid>
-      <div v-for="(season, key) in tv.seasons" v-bind:key="season.id">
-        <b-row v-for="(episode, seasonKey) in seasonEpisodes[key]" v-bind:key="seasonKey">
-          <b-col class="big-episode-col">
-            <div v-bind:class="selectThumbnailClass(seasonKey)">
-                <a :href="'/play/episode/'+episode.id">
-                  <div v-bind:style="{background: 'url('+findThumbnail(episode.images)+') no-repeat center center',
-                  'background-size': 'cover', height: '350px'}" class="episode-thumbnail">
-                    <div class="episode-gif-wrapper">
-                      <img :src="findGif(episode.images)" class="episode-gif">
-                    </div>
-                    <div class="play">
-                      <i class="far fa-play-circle"></i>
-                    </div>
-                  </div>
-                </a>
-            </div>
-            <div v-bind:class="selectClass(seasonKey)" v-bind:style="{background: '-webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.8) 45%, rgba(255, 255, 255, 0)), url('+findThumbnail(episode.images)+') no-repeat center center',
-                'background-size': 'cover'}">
-              <div v-bind:class="selectContentClass(seasonKey)">
-                <div class="number">
-                  <p>Episode {{ episode.episode }}</p>
-                </div>
-                <div class="info">
-                  <p>{{ episode.title }}</p>
-                </div>
-                <div class="plot">
-                  <p>{{ episode.plot }}</p>
-                </div>
-                <div class="aired">
-                  <p><i class="fas fa-calendar-alt"></i> Aired: {{ episode.aired }}</p>
-                </div>
-                <div class="rating">
-                  <p><i class="fas fa-star"></i> Rating: {{ episode.rating }}</p>
-                  <p><i class="fas fa-thumbs-up"></i> Vote:{{ episode.votes }} votes</p>
-                </div>
-              </div>
-            </div>
-          </b-col>
-        </b-row>
-      </div>
-      <seasons :tv="tv"></seasons>
+
     </b-container>
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from '~/plugins/axios'
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
-  import Seasons from '~/components/seasons'
 
   export default {
     components: {
       swiper,
       swiperSlide,
-      Seasons
     },
     data() {
       return {
@@ -91,13 +29,13 @@
       this.getTv()
     },
     async asyncData(context) {
-      let response = await axios.get('http://larafilm.spectre.local/api/tvs/' + context.params.id)
+      let response = await axios.get('/tvs/' + context.params.id)
       let tv = response.data
 
       let seasons = []
 
       for (let season of tv.seasons) {
-        let episodes = await axios.get('http://larafilm.spectre.local/api/seasons/' + season.id + '/episodes')
+        let episodes = await axios.get('/seasons/' + season.id + '/episodes')
         seasons.push(episodes.data)
       }
 
@@ -126,11 +64,11 @@
         }
       },
       async getTv() {
-        let response = await axios.get('http://larafilm.spectre.local/api/tvs/' + this.$route.params.id)
+        let response = await axios.get('/tvs/' + this.$route.params.id)
         this.tv = response.data
 
         for (let season of this.tv.seasons) {
-          let episodes = await axios.get('http://larafilm.spectre.local/api/seasons/' + season.id + '/episodes')
+          let episodes = await axios.get('/seasons/' + season.id + '/episodes')
           this.seasonEpisodes.push(episodes.data)
         }
       },

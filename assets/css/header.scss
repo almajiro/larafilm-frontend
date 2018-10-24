@@ -1,17 +1,23 @@
 .navbar {
-  background-color: rgba(0, 0, 0, 0.25) !important;
+  background: transparent !important;
   position: absolute;
   top: 0;
   z-index: 999;
   left: 0;
   width: 100%;
-  box-shadow: 0px 9px 20px -3px rgba(0,0,0,0.5);
-  -webkit-box-shadow: 0px 9px 20px -3px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 9px 20px -3px rgba(0,0,0,0.5);
+  height: 70px;
+  font-size: 1.1em;
 }
 .navbar-brand {
   color: $color-primary-4 !important;
   font-weight: 600;
+}
+
+
+.text-logo {
+  font-size: 100px;
+  font-weight: bold;
+  padding-top: 60px;
 }
 
 .header-slider {
@@ -21,34 +27,42 @@
 
 .header-item {
   position: relative;
-  overflow: hidden;
-  height: 580px;
+  /*overflow: hidden;*/
+  height: 56.25vw;
+}
+
+.header-item .video-player {
+  position: absolute;
+  /* z-index: -1; */
+  top: 0;
+  width: 100%;
 }
 
 .header-item .info {
   position: absolute;
-  top: 50px;
-  height: 100%;
+  top: 0;
   width: 40%;
+  height: 130%;
   color: white;
-  margin: 40px;
-  margin-top: 100px;
+  margin: 60px;
+  transition-duration: 500ms;
+  transition-delay: 0ms;
 }
 
 @media screen and (max-width: 700px) {
   .header-item .info {
     position: absolute;
-    top: 50px;
+    /*top: 50px;*/
     height: 100%;
     width: 80%;
     color: white;
     margin: 40px;
-    margin-top: 100px;
+    /*margin-top: 100px;*/
   }
 }
 
 .header-item .bg {
-  height: 580px;
+  height: 100%;
   width: 100%;
   background: $color-primary-0;
   background-size: cover !important;
@@ -56,59 +70,54 @@
   flex-direction: column;
 }
 
-.header-item img {
-  max-width: 100%;
-  max-height: 120px;
+.header-item .logo {
+  padding-top: 45px;
+  width: 90%;
+}
+
+@media screen and (max-width: 700px) {
+  .header-item .logo {
+    padding-top: 10px;
+    width: 70%;
+  }
 }
 
 .header-item p {
-  padding-top: 10px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.4em;
 }
 
 .header-item button {
-  margin: 5px;
-  background: rgba(0, 0, 0, 0);
-  border-radius: 5px;
+  background-color: rgba(51,51,51,.4);
+  border-width: 0;
+  padding: .75em 2.3em;
+  -webkit-border-radius: .2vw;
+  -moz-border-radius: .2vw;
+  border-radius: .2vw;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-size: 1.1vw;
   color: white;
-  border-style: solid;
-  border-width: 3px;
-  font-weight: 1000;
+  margin-right: 15px;
+  font-weight: bold;
 }
 
-.header-item .swiper-slide {
-  width: 80%;
+.header-item button i {
+  padding-right: 10px;
 }
 
-.header-item .swiper-slide:nth-child(2n) {
-  width: 60%;
+.header-item .seasons {
+  font-size: 1.6vw;
+  font-weight: 700;
 }
 
-.header-item .swiper-slide:nth-child(3n) {
-  width: 40%;
-}
-
-.header-item .swiper-container {
-  padding: 27px;
-}
-
-.header-item .swiper-pagination-bullet-active {
-  opacity: 1;
-  background: $color-primary-4;
-}
-
-.header-item .watch-trailer {
-  border-color: $color-primary-4;
-  background: $color-primary-4 !important;
-}
-
-.header-item .add-to-list {
-  border-color: $rgba-complement-4;
-}
-
-.header-item .big-swiper-button-prev {
-  z-index: 999;
+.header-item .plot {
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+  font-size: 1.6vw;
+  margin-top: -20px;
 }
 
 .header-series {

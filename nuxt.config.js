@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    backendUrl: process.env.BACKEND_URL || 'http://localhost:8080'
+  },
   /*
   ** Headers of the page
   */
@@ -21,8 +24,8 @@ module.exports = {
     height: '5px'
   },
   plugins: [
-    { src: '~/plugins/nuxt-video-player-plugin.js' },
-    { src: '~/plugins/utils.js'}
+    { src: '~/plugins/videoplayer.js' },
+    { src: '~/plugins/utils.js'},
   ],
   /*
   ** Build configuration
@@ -52,7 +55,7 @@ module.exports = {
     babel: {
       presets: ['es2015', 'stage-3']
     },
-    vendor: ['axios', 'vue-carousel-3d', 'vue-carousel', 'vue-awesome-swiper', 'vue-video-player', 'video.js', 'babel-polyfill']
+    vendor: ['vue-carousel-3d', 'vue-carousel', 'vue-awesome-swiper', 'vue-video-player', 'video.js', 'babel-polyfill']
   },
   mode: 'spa',
   modules: [

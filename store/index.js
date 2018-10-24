@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '~/plugins/axios'
 
 export const state = () => ({
   appName: ''
@@ -12,7 +12,7 @@ export const mutations = {
 
 export const actions = {
   loadAppBasics(state) {
-    axios.get('http://larafilm.spectre.local/api')
+    axios.get('/')
       .then(response => {
         state.commit("setAppName", response.data.name)
       })
