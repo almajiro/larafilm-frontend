@@ -62,7 +62,7 @@
               //src: "http://backend.mbp.local/storage/videos/ad8c3f26-7587-49ec-a918-065d45cb7b99.m3u8"
               //src: "http://backend.mbp.local/storage/videos/3957290a-3ab2-42db-9bec-a63fde7edadf.m3u8"
               //src: "http://backend.mbp.local/storage/videos/70be89f6-93ca-4ad1-83c5-ce2246b9ba4f_1000.m3u8"
-              src: "http://backend.mbp.local/storage/videos/92a54392-c34f-47f1-8830-c0f82b2646f1.m3u8"
+              src: "http://backend.mbp.local/storage/videos/79cd217e-0ef5-4b49-bf61-528fbbdab8d3.m3u8"
             }],
           },
           isPlay: false,
