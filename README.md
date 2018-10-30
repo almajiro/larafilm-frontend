@@ -2,6 +2,10 @@
 
 > The Frontend of LaraFilm
 
+## Screenshot
+### Netflix Style Carousel Slider 2018/10/30
+![ScreenShot1](https://github.com/almajiro/larafilm-frontend/blob/master/screenshots/screenshot1.png?raw=true)
+
 ## Build Setup
 
 ``` bash
