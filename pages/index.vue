@@ -3,6 +3,9 @@
     <header-item :tv="tvs[3]" :tvs="tvs"></header-item>
     <b-container fluid>
       <slider :tvs="tvs" head="Netflix Original"></slider>
+      <slider :tvs="tvs" head="Netflix Original"></slider>
+      <slider :tvs="tvs" head="Netflix Original"></slider>
+      <slider :tvs="tvs" head="Netflix Original"></slider>
     </b-container>
   </div>
 </template>
@@ -38,7 +41,6 @@
 
 <style scoped>
   .container-fluid {
-    padding-bottom: 400px;
     padding-right: 0;
     padding-left: 0;
   }
