@@ -26,7 +26,7 @@
     "babel-runtime": "^6.26.0",
     "bootstrap-vue": "^2.0.0-rc.11",
     "i": "^0.3.6",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.11",
     "node-sass": "^4.9.3",
