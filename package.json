@@ -19,7 +19,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "@types/jquery": "^3.3.22",
     "@videojs/http-streaming": "^1.3.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-vue-app": "^2.0.0",
